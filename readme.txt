@@ -4,6 +4,6 @@ c--linux c -- thread-fork-socket
 cpp-
 linux-
 file-c++
-python
-latex
+python-testpython
+latex-cvpaper
 
