@@ -1,0 +1,611 @@
+# depslib dependency file v1.0
+1435923786 source:/home/lainan/cpp/ffmpeg/main.cpp
+	<libavcodec/avcodec.h>
+	<libavformat/avformat.h>
+	<libswscale/swscale.h>
+	<stdio.h>
+
+1435307183 /usr/local/include/libavformat/avformat.h
+	<time.h>
+	<stdio.h>
+	"libavcodec/avcodec.h"
+	"libavutil/dict.h"
+	"libavutil/log.h"
+	"avio.h"
+	"libavformat/version.h"
+
+1435307183 /usr/local/include/libavcodec/avcodec.h
+	<errno.h>
+	"libavutil/samplefmt.h"
+	"libavutil/attributes.h"
+	"libavutil/avutil.h"
+	"libavutil/buffer.h"
+	"libavutil/cpu.h"
+	"libavutil/channel_layout.h"
+	"libavutil/dict.h"
+	"libavutil/frame.h"
+	"libavutil/log.h"
+	"libavutil/pixfmt.h"
+	"libavutil/rational.h"
+	"version.h"
+	"old_codec_ids.h"
+
+1435307183 /usr/local/include/libavutil/samplefmt.h
+	<stdint.h>
+	"avutil.h"
+	"attributes.h"
+
+1435307183 /usr/local/include/libavutil/avutil.h
+	"common.h"
+	"error.h"
+	"rational.h"
+	"version.h"
+	"macros.h"
+	"mathematics.h"
+	"log.h"
+	"pixfmt.h"
+
+1435307183 /usr/local/include/libavutil/common.h
+	<errno.h>
+	<inttypes.h>
+	<limits.h>
+	<math.h>
+	<stdint.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"attributes.h"
+	"version.h"
+	"libavutil/avconfig.h"
+	"config.h"
+	"intmath.h"
+	"common.h"
+	"mem.h"
+	"internal.h"
+
+1435307183 /usr/local/include/libavutil/attributes.h
+
+1435307183 /usr/local/include/libavutil/version.h
+	"macros.h"
+
+1435307183 /usr/local/include/libavutil/macros.h
+
+1435307183 /usr/local/include/libavutil/avconfig.h
+
+1435307183 /usr/local/include/libavutil/mem.h
+	<limits.h>
+	<stdint.h>
+	"attributes.h"
+	"error.h"
+	"avutil.h"
+
+1435307183 /usr/local/include/libavutil/error.h
+	<errno.h>
+	<stddef.h>
+
+1435307183 /usr/local/include/libavutil/rational.h
+	<stdint.h>
+	<limits.h>
+	"attributes.h"
+
+1435307183 /usr/local/include/libavutil/mathematics.h
+	<stdint.h>
+	<math.h>
+	"attributes.h"
+	"rational.h"
+	"intfloat.h"
+
+1435307183 /usr/local/include/libavutil/intfloat.h
+	<stdint.h>
+	"attributes.h"
+
+1435307183 /usr/local/include/libavutil/log.h
+	<stdarg.h>
+	"avutil.h"
+	"attributes.h"
+	"version.h"
+
+1435307183 /usr/local/include/libavutil/pixfmt.h
+	"libavutil/avconfig.h"
+	"version.h"
+	"old_pix_fmts.h"
+
+1435307183 /usr/local/include/libavutil/old_pix_fmts.h
+
+1435307183 /usr/local/include/libavutil/buffer.h
+	<stdint.h>
+
+1435307183 /usr/local/include/libavutil/cpu.h
+	"attributes.h"
+
+1435307183 /usr/local/include/libavutil/channel_layout.h
+	<stdint.h>
+
+1435307183 /usr/local/include/libavutil/dict.h
+	<stdint.h>
+	"version.h"
+
+1435307183 /usr/local/include/libavutil/frame.h
+	<stdint.h>
+	"avutil.h"
+	"buffer.h"
+	"dict.h"
+	"rational.h"
+	"samplefmt.h"
+	"pixfmt.h"
+	"version.h"
+
+1435307183 /usr/local/include/libavcodec/version.h
+	"libavutil/version.h"
+
+1435307183 /usr/local/include/libavcodec/old_codec_ids.h
+
+1435307183 /usr/local/include/libavformat/avio.h
+	<stdint.h>
+	"libavutil/common.h"
+	"libavutil/dict.h"
+	"libavutil/log.h"
+	"libavformat/version.h"
+
+1435307183 /usr/local/include/libavformat/version.h
+	"libavutil/version.h"
+
+1435307183 /usr/local/include/libswscale/swscale.h
+	<stdint.h>
+	"libavutil/avutil.h"
+	"libavutil/log.h"
+	"libavutil/pixfmt.h"
+	"version.h"
+
+1435307183 /usr/local/include/libswscale/version.h
+	"libavutil/version.h"
+
+1435917486 /usr/local/ffmpeg/include/libavformat/avformat.h
+	<time.h>
+	<stdio.h>
+	"libavcodec/avcodec.h"
+	"libavutil/dict.h"
+	"libavutil/log.h"
+	"avio.h"
+	"libavformat/version.h"
+
+1435917486 /usr/local/ffmpeg/include/libavcodec/avcodec.h
+	<errno.h>
+	"libavutil/samplefmt.h"
+	"libavutil/attributes.h"
+	"libavutil/avutil.h"
+	"libavutil/buffer.h"
+	"libavutil/cpu.h"
+	"libavutil/channel_layout.h"
+	"libavutil/dict.h"
+	"libavutil/frame.h"
+	"libavutil/log.h"
+	"libavutil/pixfmt.h"
+	"libavutil/rational.h"
+	"version.h"
+	"old_codec_ids.h"
+
+1435917487 /usr/local/ffmpeg/include/libavutil/samplefmt.h
+	<stdint.h>
+	"avutil.h"
+	"attributes.h"
+
+1435917487 /usr/local/ffmpeg/include/libavutil/avutil.h
+	"common.h"
+	"error.h"
+	"rational.h"
+	"version.h"
+	"macros.h"
+	"mathematics.h"
+	"log.h"
+	"pixfmt.h"
+
+1435917487 /usr/local/ffmpeg/include/libavutil/common.h
+	<errno.h>
+	<inttypes.h>
+	<limits.h>
+	<math.h>
+	<stdint.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"attributes.h"
+	"version.h"
+	"libavutil/avconfig.h"
+	"config.h"
+	"intmath.h"
+	"common.h"
+	"mem.h"
+	"internal.h"
+
+1435917487 /usr/local/ffmpeg/include/libavutil/attributes.h
+
+1435917487 /usr/local/ffmpeg/include/libavutil/version.h
+	"macros.h"
+
+1435917487 /usr/local/ffmpeg/include/libavutil/macros.h
+
+1435917487 /usr/local/ffmpeg/include/libavutil/avconfig.h
+
+1435917487 /usr/local/ffmpeg/include/libavutil/mem.h
+	<limits.h>
+	<stdint.h>
+	"attributes.h"
+	"error.h"
+	"avutil.h"
+
+1435917487 /usr/local/ffmpeg/include/libavutil/error.h
+	<errno.h>
+	<stddef.h>
+
+1435917487 /usr/local/ffmpeg/include/libavutil/rational.h
+	<stdint.h>
+	<limits.h>
+	"attributes.h"
+
+1435917487 /usr/local/ffmpeg/include/libavutil/mathematics.h
+	<stdint.h>
+	<math.h>
+	"attributes.h"
+	"rational.h"
+	"intfloat.h"
+
+1435917487 /usr/local/ffmpeg/include/libavutil/intfloat.h
+	<stdint.h>
+	"attributes.h"
+
+1435917487 /usr/local/ffmpeg/include/libavutil/log.h
+	<stdarg.h>
+	"avutil.h"
+	"attributes.h"
+	"version.h"
+
+1435917487 /usr/local/ffmpeg/include/libavutil/pixfmt.h
+	"libavutil/avconfig.h"
+	"version.h"
+	"old_pix_fmts.h"
+
+1435917487 /usr/local/ffmpeg/include/libavutil/old_pix_fmts.h
+
+1435917487 /usr/local/ffmpeg/include/libavutil/buffer.h
+	<stdint.h>
+
+1435917487 /usr/local/ffmpeg/include/libavutil/cpu.h
+	"attributes.h"
+
+1435917487 /usr/local/ffmpeg/include/libavutil/channel_layout.h
+	<stdint.h>
+
+1435917487 /usr/local/ffmpeg/include/libavutil/dict.h
+	<stdint.h>
+	"version.h"
+
+1435917487 /usr/local/ffmpeg/include/libavutil/frame.h
+	<stdint.h>
+	"avutil.h"
+	"buffer.h"
+	"dict.h"
+	"rational.h"
+	"samplefmt.h"
+	"pixfmt.h"
+	"version.h"
+
+1435917486 /usr/local/ffmpeg/include/libavcodec/version.h
+	"libavutil/version.h"
+
+1435917486 /usr/local/ffmpeg/include/libavcodec/old_codec_ids.h
+
+1435917486 /usr/local/ffmpeg/include/libavformat/avio.h
+	<stdint.h>
+	"libavutil/common.h"
+	"libavutil/dict.h"
+	"libavutil/log.h"
+	"libavformat/version.h"
+
+1435917486 /usr/local/ffmpeg/include/libavformat/version.h
+	"libavutil/version.h"
+
+1435917487 /usr/local/ffmpeg/include/libswscale/swscale.h
+	<stdint.h>
+	"libavutil/avutil.h"
+	"libavutil/log.h"
+	"libavutil/pixfmt.h"
+	"version.h"
+
+1435917487 /usr/local/ffmpeg/include/libswscale/version.h
+	"libavutil/version.h"
+
+1435917487 /usr/local/ffmpeg/include/libavutil/time.h
+	<stdint.h>
+
+1435306505 /usr/local/ffmpeg/include//libavformat/avformat.h
+	<time.h>
+	<stdio.h>
+	"libavcodec/avcodec.h"
+	"libavutil/dict.h"
+	"libavutil/log.h"
+	"avio.h"
+	"libavformat/version.h"
+
+1435306505 /usr/local/ffmpeg/include//libavcodec/avcodec.h
+	<errno.h>
+	"libavutil/samplefmt.h"
+	"libavutil/attributes.h"
+	"libavutil/avutil.h"
+	"libavutil/buffer.h"
+	"libavutil/cpu.h"
+	"libavutil/channel_layout.h"
+	"libavutil/dict.h"
+	"libavutil/frame.h"
+	"libavutil/log.h"
+	"libavutil/pixfmt.h"
+	"libavutil/rational.h"
+	"version.h"
+	"old_codec_ids.h"
+
+1435306506 /usr/local/ffmpeg/include//libavutil/samplefmt.h
+	<stdint.h>
+	"avutil.h"
+	"attributes.h"
+
+1435306506 /usr/local/ffmpeg/include//libavutil/avutil.h
+	"common.h"
+	"error.h"
+	"rational.h"
+	"version.h"
+	"macros.h"
+	"mathematics.h"
+	"log.h"
+	"pixfmt.h"
+
+1435306506 /usr/local/ffmpeg/include//libavutil/common.h
+	<errno.h>
+	<inttypes.h>
+	<limits.h>
+	<math.h>
+	<stdint.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"attributes.h"
+	"version.h"
+	"libavutil/avconfig.h"
+	"config.h"
+	"intmath.h"
+	"common.h"
+	"mem.h"
+	"internal.h"
+
+1435306505 /usr/local/ffmpeg/include//libavutil/attributes.h
+
+1435306506 /usr/local/ffmpeg/include//libavutil/version.h
+	"macros.h"
+
+1435306506 /usr/local/ffmpeg/include//libavutil/macros.h
+
+1435306506 /usr/local/ffmpeg/include//libavutil/avconfig.h
+
+1435306506 /usr/local/ffmpeg/include//libavutil/mem.h
+	<limits.h>
+	<stdint.h>
+	"attributes.h"
+	"error.h"
+	"avutil.h"
+
+1435306506 /usr/local/ffmpeg/include//libavutil/error.h
+	<errno.h>
+	<stddef.h>
+
+1435306506 /usr/local/ffmpeg/include//libavutil/rational.h
+	<stdint.h>
+	<limits.h>
+	"attributes.h"
+
+1435306506 /usr/local/ffmpeg/include//libavutil/mathematics.h
+	<stdint.h>
+	<math.h>
+	"attributes.h"
+	"rational.h"
+	"intfloat.h"
+
+1435306506 /usr/local/ffmpeg/include//libavutil/intfloat.h
+	<stdint.h>
+	"attributes.h"
+
+1435306506 /usr/local/ffmpeg/include//libavutil/log.h
+	<stdarg.h>
+	"avutil.h"
+	"attributes.h"
+	"version.h"
+
+1435306506 /usr/local/ffmpeg/include//libavutil/pixfmt.h
+	"libavutil/avconfig.h"
+	"version.h"
+	"old_pix_fmts.h"
+
+1435306506 /usr/local/ffmpeg/include//libavutil/old_pix_fmts.h
+
+1435306506 /usr/local/ffmpeg/include//libavutil/buffer.h
+	<stdint.h>
+
+1435306506 /usr/local/ffmpeg/include//libavutil/cpu.h
+	"attributes.h"
+
+1435306506 /usr/local/ffmpeg/include//libavutil/channel_layout.h
+	<stdint.h>
+
+1435306506 /usr/local/ffmpeg/include//libavutil/dict.h
+	<stdint.h>
+	"version.h"
+
+1435306506 /usr/local/ffmpeg/include//libavutil/frame.h
+	<stdint.h>
+	"avutil.h"
+	"buffer.h"
+	"dict.h"
+	"rational.h"
+	"samplefmt.h"
+	"pixfmt.h"
+	"version.h"
+
+1435306505 /usr/local/ffmpeg/include//libavcodec/version.h
+	"libavutil/version.h"
+
+1435306505 /usr/local/ffmpeg/include//libavcodec/old_codec_ids.h
+
+1435306505 /usr/local/ffmpeg/include//libavformat/avio.h
+	<stdint.h>
+	"libavutil/common.h"
+	"libavutil/dict.h"
+	"libavutil/log.h"
+	"libavformat/version.h"
+
+1435306505 /usr/local/ffmpeg/include//libavformat/version.h
+	"libavutil/version.h"
+
+1435306505 /usr/local/ffmpeg/include//libswscale/swscale.h
+	<stdint.h>
+	"libavutil/avutil.h"
+	"libavutil/log.h"
+	"libavutil/pixfmt.h"
+	"version.h"
+
+1435306505 /usr/local/ffmpeg/include//libswscale/version.h
+	"libavutil/version.h"
+
+1424883291 /usr/include/errno.h
+	<features.h>
+	<bits/errno.h>
+
+1424883270 /usr/include/features.h
+	<stdc-predef.h>
+	<sys/cdefs.h>
+	<gnu/stubs.h>
+
+1424883270 /usr/include/stdc-predef.h
+
+1424883290 /usr/include/stdint.h
+	<features.h>
+	<bits/wchar.h>
+	<bits/wordsize.h>
+
+1424883290 /usr/include/inttypes.h
+	<features.h>
+	<stdint.h>
+	<stddef.h>
+
+1424883270 /usr/include/limits.h
+	<features.h>
+	<bits/wordsize.h>
+	<bits/posix1_lim.h>
+	<bits/posix2_lim.h>
+	<bits/xopen_lim.h>
+
+1424883288 /usr/include/math.h
+	<features.h>
+	<bits/huge_val.h>
+	<bits/huge_valf.h>
+	<bits/huge_vall.h>
+	<bits/inf.h>
+	<bits/nan.h>
+	<bits/mathdef.h>
+	<bits/mathcalls.h>
+	<bits/mathcalls.h>
+	<bits/mathcalls.h>
+	<bits/mathinline.h>
+	<bits/math-finite.h>
+
+1424883292 /usr/include/stdio.h
+	<features.h>
+	<stddef.h>
+	<bits/types.h>
+	<libio.h>
+	<stdarg.h>
+	<bits/stdio_lim.h>
+	<bits/sys_errlist.h>
+	<getopt.h>
+	<bits/stdio.h>
+	<bits/stdio2.h>
+	<bits/stdio-ldbl.h>
+
+1424883292 /usr/include/libio.h
+	<_G_config.h>
+	<stdarg.h>
+	<sys/cdefs.h>
+	<bits/stdio-lock.h>
+	<shlib-compat.h>
+	<bits/libio-ldbl.h>
+
+1424883292 /usr/include/_G_config.h
+	<bits/types.h>
+	<stddef.h>
+	<wchar.h>
+	<gconv.h>
+
+1424883295 /usr/include/wchar.h
+	<features.h>
+	<stdio.h>
+	<stdarg.h>
+	<bits/wchar.h>
+	<stddef.h>
+	<wctype.h>
+	<xlocale.h>
+	<xlocale.h>
+	<xlocale.h>
+	<wctype.h>
+	<bits/wchar2.h>
+	<bits/wchar-ldbl.h>
+
+1424883301 /usr/include/wctype.h
+	<features.h>
+	<bits/types.h>
+	<wchar.h>
+	<endian.h>
+	<xlocale.h>
+
+1424883294 /usr/include/endian.h
+	<features.h>
+	<bits/endian.h>
+	<bits/byteswap.h>
+
+1424883272 /usr/include/xlocale.h
+
+1424883271 /usr/include/gconv.h
+	<features.h>
+	<wchar.h>
+	<stddef.h>
+
+1424883297 /usr/include/getopt.h
+	<ctype.h>
+
+1424883286 /usr/include/ctype.h
+	<features.h>
+	<bits/types.h>
+	<endian.h>
+	<xlocale.h>
+
+1424883290 /usr/include/stdlib.h
+	<features.h>
+	<stddef.h>
+	<bits/waitflags.h>
+	<bits/waitstatus.h>
+	<xlocale.h>
+	<sys/types.h>
+	<alloca.h>
+	<bits/stdlib-bsearch.h>
+	<bits/stdlib-float.h>
+	<bits/stdlib.h>
+	<bits/stdlib-ldbl.h>
+
+1424883291 /usr/include/alloca.h
+	<features.h>
+	<stddef.h>
+
+1424883294 /usr/include/string.h
+	<features.h>
+	<stddef.h>
+	<xlocale.h>
+	<bits/string.h>
+	<bits/string2.h>
+	<bits/string3.h>
+
