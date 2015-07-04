@@ -21,5 +21,5 @@ do
 	echo "you are not pass 22..."
 	read pass
 done
-
+echo "what funcikging dayyyyyy...."
 echo "you are pass all test..."
