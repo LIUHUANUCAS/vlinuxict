@@ -1,0 +1,14 @@
+LIBS=-lavcodec \
+	 -lavformat \
+	 -lavutil
+INCLUDE=/usr/local/gitffmpeg/include
+
+LIBSPATH=/usr/local/gitffmpeg/lib
+OBJS=main
+$(OBJS):./avio_list_dir.o
+	gcc -o ${OBJS} avio_list_dir.o -L${LIBSPATH}  ${LIBS}
+avio_list_dir.o:avio_list_dir.c
+	gcc -c avio_list_dir.c -I${INCLUDE}
+
+clean:
+	rm *.o
