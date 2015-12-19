@@ -20,7 +20,7 @@ sub printhash{
 sub CreateHash{
 #("list.txt",\%I2I);
   my($filename,$hash) = ($_[0],$_[1]);
-  print $filename;
+  # print $filename;
   # my $filedes;
   if( !open(fd,"<$filename")){
     die "open file failed...\n";
@@ -46,7 +46,7 @@ sub CreateHash{
 		my @tarray = ($fl0,$fl3);
 		$word2firstlast{$ee} = \@tarray;
 
-		print "$fl3";
+		# print "$fl3";
 		if(defined $last{$fl3}){
 				my $pa = $last{$fl3};
 				push @$pa,$words0;
@@ -63,7 +63,6 @@ sub CreateHash{
 			$first{"$fl0"}=\@tmpa2;
 		}
 
-
   }
 		$hash->{"wordindex"} = \%word2firstlast;
 		$hash->{"first"} = \%first;
@@ -74,9 +73,9 @@ sub CreateHash{
 sub MachineFirst{
 	my $phash = $_[0];
 	my $len = keys %$phash;
-	print "$len in MachineFirst\n";
+	# print "$len in MachineFirst\n";
 	my $stop = int(rand($len));
-	print "$stop is \n";
+	# print "$stop is \n";
 	my $M = "k";
 	$refhash = $phash->{"wordindex"};
 	while ( my($k,$v) = each(%$refhash) ){
@@ -118,17 +117,28 @@ sub PrintAllLinkable{# (\%hash,$M);
 		my $wordindex = $phash->{"wordindex"};
 		my $first = $phash->{"first"};
 		my $lastyin = $wordindex->{"$M"};#last pingyin in word $M
-		print "$lastyin->[0] : $lastyin->[1] \n";
-		print "$first \n";
+		# print "$lastyin->[0] : $lastyin->[1] \n";
+		# print "$first \n";
 		my $plastarray = $first->{"$lastyin->[1]"};
-		print "$plastarray \n";
-		foreach (@$plastarray){
-				print "$_ "
-		}
+		# print "$plastarray \n";
+		# foreach (@$plastarray){
+		# 		print "$_ "
+		# }
 		print "\n";
 		return \@$plastarray;
 }
 
+sub MachineIdiom {
+	 #(\%I2I,$U);
+	 my $phash = $_[0];
+	 my $U = $_[1];
+	 print "U - > $U";
+	 $likedIdiomArray = PrintAllLinkable(\%$phash,$U);
+	 foreach my $e($linkedIdiomArray){
+		 	print "$e "
+	 }
+	 print "\n";
+}
 
 
 
