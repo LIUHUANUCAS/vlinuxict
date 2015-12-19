@@ -1,0 +1,44 @@
+#!/bin/perl
+@array = (1,2,3,4,5);
+print @array,"\n";
+foreach $e(@array){
+	print "$e\n";
+}
+for($i=0;$i<@array;$i++){
+	print "$array[$i] ";
+}
+print "\n";
+($first,$send) = @array;
+print "$first,$send\n";
+($a,$b,@c) = @array;
+print "$a,$b\n";
+foreach $e(@c){
+	print "$e ";
+}
+print "\n";
+@suba = @array[0,1,2];
+foreach $e(@suba){
+	print "$e-> ";
+}
+print "\n";
+
+push @array, 1;
+print pop @array ;
+print "\n";
+$str = join(",",@array);
+print "$str\n";
+chop(@array);
+print join("->",@array);
+print "\n $#array\n";
+%hash = ("liu","huan","zhang","zhiwei","tian","wei","hello","world");
+@keysall = keys(%hash);
+@valuesall = values(%hash);
+foreach $e(@keysall){
+	print "$hash{$e} - >" ;
+	#print "$e->";
+}
+print "\n";
+foreach $e(@valuesall){
+	print "$e->";
+}
+print "\n";

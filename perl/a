@@ -1,0 +1,49 @@
+#!/bin/perl
+print "helloworld\n";
+print 2**3 ,"\n";
+print "ab"*3;
+$fred = 10;
+print $fred*10,"\n";
+$str = "hello";
+$str.="abc";
+$b="perl";
+$c="hello $b";
+print $str,"\n";
+print $c,"\n";
+if ($fred > 10){
+	print "fred larger than 10\n";
+}else{
+	print "$fred is less than or equal 10\n";
+}
+#$line = <STDIN>;
+#print $line;
+#chomp($line);
+#print $line;
+
+
+$count = 0;
+while ($count < 10){
+	$count +=1;
+	print $count,"\n";
+}
+$n=1;
+while($n < 100){
+	$sum += $n;
+	$n +=1;
+}
+print $sum;
+$string .= "hwllo string ....\n";
+print $string;
+$n=1;
+$sum = 0;
+while($n < 100){
+	if($n % 2 ==0){
+		next;
+	}
+	if($n > 50 ){
+		last;
+	}
+	$sum += $n;
+}continue{$n++}
+print "$sum \n";
+print "end while \n";
