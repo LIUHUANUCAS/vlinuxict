@@ -149,10 +149,11 @@ sub MachineIdiom {
 	#  print "===============$lastyin->[0]:$lastyin->[1]\n";
 	 my $likedIdiomArray = $first ->{"$lastyin->[1]"};
 	 $count = 0;
-	 foreach my $e(@$likedIdiomArray){
-		 	print "$count : $e \n";
-			$count++;
-	 }
+	 
+	 #foreach my $e(@$likedIdiomArray){
+	#	 	print "$count : $e \n";
+	#		$count++;
+	 #}
 	 print "\n";
 }
 

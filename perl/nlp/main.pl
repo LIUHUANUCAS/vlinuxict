@@ -35,12 +35,13 @@ sub mainloop{
       print "your turn:\n";
       $U=<stdin>;
       chomp($U);
-      # $U = decode('gbk',$U);
-      # print "$U---->\n";
       chomp($U);
-      print IsLinked(\%hash,$M,$U);
-      # @array = (1,2,3,4,5);
+      if( IsLinked(\%hash,$M,$U)){
+      	print "OK!\n";
+	$Score++;
+      }else{
       $selectresult = PrintAllLinkable(\%hash,$M);
+      print "Select One to Cout.\n";
       $count = 0;
       foreach (@$selectresult){
         print "$count :$_ ";
@@ -50,12 +51,11 @@ sub mainloop{
       $ID=<stdin>;
       chomp($ID);
       $End = time();
-      # print "select -> ",$$selectresult[$ID];
       print "You select:$$selectresult[$ID]\n";
+      $Score--;
+      }
       # MachineIdiom(\%hash,$$selectresult[$ID]);
       $M = "$$selectresult[$ID]";
-      print $M,"end \n";
-      # PrintAllLinkable(\%hash,$M);
       MachineIdiom(\%hash,$M);
       print "\n";
     }
