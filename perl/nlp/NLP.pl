@@ -9,6 +9,7 @@ our @ISA = qw ( Exporter);
 our @EXPORT_OK=qw(printhash CreateHash);
 # these are exported by default.
 our @EXPORT = qw(printhash CreateHash);
+# print hash table into the screen
 sub printhash{
 	my $phash = $_[0];
 	foreach my $e (keys %$phash){
@@ -17,6 +18,16 @@ sub printhash{
 	print "\n";
 }
 
+#create hash table according to the list file
+#the returned value is a hash table that
+##1.table = hash{"wordindex"} is also a hash table that stored the Idiom with the pinyin ,the first one and last one.
+##for example, table{"天长日久"}=(tian1,jiu3);
+
+##2.first = hash{"first"} is also a hash table, which stored Idioms that have the same  pinyin of the first words,
+##for example, first{"yi"} =(  依然故我 依然如故 依山傍水 依依不舍 衣钵相传 衣不蔽体 衣冠楚楚 衣冠禽兽 衣锦还乡 衣食住行 ), so we can retrieve quickly
+## according to the Idiom,such as ,量体裁衣.
+
+##3.last = hash{"last"} is a hash table as well,which stored Idioms that have the same  pinyin of the last words.but this is not used at all.
 sub CreateHash{
 #("list.txt",\%I2I);
   my($filename,$hash) = ($_[0],$_[1]);
@@ -34,10 +45,6 @@ sub CreateHash{
   foreach my $e(@array){
     my @words = split(' ',$e);
 		my @firstlast = split('_',$words[1]);
-		# $firstlast[0] .="_";
-		# $firstlast[0] .="$firstlast[3]";
-    # $hash->{"$words[0]"} = $firstlast[0];
-		#create index about word to pinyin
 		my $CODING = 'gbk';
 		my $fl0 = decode($CODING,$firstlast[0]);
 		my $fl3 = decode($CODING,$firstlast[-1]);
@@ -71,6 +78,7 @@ sub CreateHash{
   close(fd);
 }
 
+##the programe will randomly select one word from the  directory--the list file.
 sub MachineFirst{
 	my $phash = $_[0];
 	my $len = keys %$phash;
@@ -90,71 +98,64 @@ sub MachineFirst{
 	$M;
 }
 
+#judge the relation about 2 Idioms ,the is if the  last pinyin of Idiom is the same as the other Idiom,then return 1
+#return 0 otherwise.
 sub IsLinked{# (\%I2I,$M,$U)
 		my $phash = $_[0];
 		my $M = $_[1];
 		my $U = $_[2];
 		my $wordindex = $phash->{"wordindex"};
-		# my $out = Encode::encode("gbk",$U);
-		# print "out= $out\n";
-		# print "u= $U\n";
-		# print "u->",$wordindex->{"$U"},"\n";
-		# print "out->",$wordindex->{"$out"},"\n";
 		if(! defined $wordindex->{"$U"}){
-			print "not found...\n";
 			return 0;
 		}
-		# my $mlast = ${$wordindex->{"$M"}}[1];
-		# my $ufirst = ${$wordindex->{"$U"}}[0];
+		my $mlast = ${$wordindex->{"$M"}}[1];
+		my $ufirst = ${$wordindex->{"$U"}}[0];
 		print "$mlast-> $ufirst\n";
-		if( "$mlast" == "$ufirst"){
-				return 1;
+		if( "$mlast" != "$ufirst"){
+				return 0;
 		}else {
-			return 0;
+			return 1;
 		}
 }
 
+##print all the Idiom that have the same pinyin with the Selected Idioms,which will be used the hash table that created by CreateHash function.
+##for example, Selected Idioms is 藏头露尾,the function will print 0:委靡不振 1:委曲求全
 sub PrintAllLinkable{# (\%hash,$M);
 		my $phash = $_[0];
 		my $M = $_[1];
-		# $M = decode('gbk',$M);
-		# print "PrintAlllinkable is -> $M ->>>>";
 		my $wordindex = $phash->{"wordindex"};
 		my $first = $phash->{"first"};
 		my $lastyin = $wordindex->{"$M"};#last pingyin in word $M
-		# print "$lastyin->[0] : $lastyin->[1] \n";
-		# print "$first \n";
 		my $plastarray = $first->{"$lastyin->[1]"};
-		# print "$plastarray \n";
-		# foreach (@$plastarray){
-		# 		print "$_ "
-		# }
 		print "\n";
 		$size = @$plastarray;
-		# print $size ," --->>>>size of array idom to select \n";
 		return \@$plastarray;
 }
 
+##select one Idiom according to the one that has been returned by function PrintAllLinkable.
 sub MachineIdiom {
-	 #(\%I2I,$U);
 	 my $phash = $_[0];
 	 my $U = $_[1];
 
-	#  print "MachineIdiom U - > $U\n";
 	 $likedIdiomArray = PrintAllLinkable(\%$phash,$U);
 	 my $wordindex = $phash->{"wordindex"};
 	 my $first = $phash->{"first"};
 	 my $lastyin = $wordindex->{"$U"};
-	#  print $lastyin,"\n";
-	#  print "===============$lastyin->[0]:$lastyin->[1]\n";
 	 my $likedIdiomArray = $first ->{"$lastyin->[1]"};
-	 $count = 0;
-	 
-	 #foreach my $e(@$likedIdiomArray){
-	#	 	print "$count : $e \n";
-	#		$count++;
-	 #}
-	 print "\n";
+	 $count = $#$likedIdiomArray;
+	 if($count <=0){
+		 return "";
+	 }
+	 $stop = int(rand($count));
+	 $returnvalue = "";
+	 foreach my $e(@$likedIdiomArray){
+			$stop--;
+		 	if($stop <=0){
+				$returnvalue = $e;
+			}
+			$count++;
+	 }
+	 return $returnvalue;
 }
 
 
