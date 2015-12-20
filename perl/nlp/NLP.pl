@@ -38,13 +38,14 @@ sub CreateHash{
 		# $firstlast[0] .="$firstlast[3]";
     # $hash->{"$words[0]"} = $firstlast[0];
 		#create index about word to pinyin
-		my $fl0 = decode('gbk',$firstlast[0]);
-		my $fl3 = decode('gbk',$firstlast[3]);
-		my $words0 = decode('gbk',$words[0]);
-		my $ee = decode('gbk',$e);
+		my $CODING = 'gbk';
+		my $fl0 = decode($CODING,$firstlast[0]);
+		my $fl3 = decode($CODING,$firstlast[-1]);
+		my $words0 = decode($CODING,$words[0]);
+		my $ee = decode($CODING,$e);
 
 		my @tarray = ($fl0,$fl3);
-		$word2firstlast{$ee} = \@tarray;
+		$word2firstlast{$words0} = \@tarray;
 
 		# print "$fl3";
 		if(defined $last{$fl3}){
@@ -94,16 +95,18 @@ sub IsLinked{# (\%I2I,$M,$U)
 		my $M = $_[1];
 		my $U = $_[2];
 		my $wordindex = $phash->{"wordindex"};
-		my $out = Encode::encode("gbk",$U);
-		print "out= $out\n";
-		print "u= $U\n";
-		print "u->",$wordindex->{"$U"},"\n";
-		print "out->",$wordindex->{"$out"},"\n";
+		# my $out = Encode::encode("gbk",$U);
+		# print "out= $out\n";
+		# print "u= $U\n";
+		# print "u->",$wordindex->{"$U"},"\n";
+		# print "out->",$wordindex->{"$out"},"\n";
 		if(! defined $wordindex->{"$U"}){
+			print "not found...\n";
 			return 0;
 		}
-		my $mlast = ${$wordindex->{"$M"}  }->[1];
-		my $ufirst = ${$wordindex->{"$U"}  }->[1];
+		# my $mlast = ${$wordindex->{"$M"}}[1];
+		# my $ufirst = ${$wordindex->{"$U"}}[0];
+		print "$mlast-> $ufirst\n";
 		if( "$mlast" == "$ufirst"){
 				return 1;
 		}else {
@@ -114,6 +117,8 @@ sub IsLinked{# (\%I2I,$M,$U)
 sub PrintAllLinkable{# (\%hash,$M);
 		my $phash = $_[0];
 		my $M = $_[1];
+		# $M = decode('gbk',$M);
+		# print "PrintAlllinkable is -> $M ->>>>";
 		my $wordindex = $phash->{"wordindex"};
 		my $first = $phash->{"first"};
 		my $lastyin = $wordindex->{"$M"};#last pingyin in word $M
@@ -125,6 +130,8 @@ sub PrintAllLinkable{# (\%hash,$M);
 		# 		print "$_ "
 		# }
 		print "\n";
+		$size = @$plastarray;
+		# print $size ," --->>>>size of array idom to select \n";
 		return \@$plastarray;
 }
 
@@ -132,10 +139,19 @@ sub MachineIdiom {
 	 #(\%I2I,$U);
 	 my $phash = $_[0];
 	 my $U = $_[1];
-	 print "U - > $U";
+
+	#  print "MachineIdiom U - > $U\n";
 	 $likedIdiomArray = PrintAllLinkable(\%$phash,$U);
-	 foreach my $e($linkedIdiomArray){
-		 	print "$e "
+	 my $wordindex = $phash->{"wordindex"};
+	 my $first = $phash->{"first"};
+	 my $lastyin = $wordindex->{"$U"};
+	#  print $lastyin,"\n";
+	#  print "===============$lastyin->[0]:$lastyin->[1]\n";
+	 my $likedIdiomArray = $first ->{"$lastyin->[1]"};
+	 $count = 0;
+	 foreach my $e(@$likedIdiomArray){
+		 	print "$count : $e \n";
+			$count++;
 	 }
 	 print "\n";
 }

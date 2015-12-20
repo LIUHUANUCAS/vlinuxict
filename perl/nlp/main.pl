@@ -6,48 +6,77 @@ use Encode;
 use Foo;  # import default list of items.
 # use NLP;
 require "NLP.pl";
-my $filename = "list2";
-my %hash = ();
-&CreateHash($filename,\%hash);
-# &printhash(\%hash);
-$ph = $hash{"first"};
-foreach (keys %$ph){
-    print "key :$_ ->";
-    $pa = $ph->{$_};
-    foreach my $e (@$pa){
-      # print Encode::encode("gbk",$e);
-      print "$e ";
+
+sub mainloop{
+
+      my $filename = "list2";
+      my %hash = ();
+      &CreateHash($filename,\%hash);
+      # &printhash(\%hash);
+      $ph = $hash{"wordindex"};
+      # foreach (keys %$ph){
+      #     print "key :$_ ->";
+      #     $pa = $ph->{$_};
+      #     foreach my $e (@$pa){
+      #       # print Encode::encode("gbk",$e);
+      #       print "$e ";
+      #     }
+      #     print "\n";
+      # }
+
+      $len = keys %hash;
+      my $M = MachineFirst(\%hash);
+      # $M = decode('utf8',$M);
+      # $M = decode('gbk',$M);
+      # print "$len\n";
+      # print "$M\n";
+      while(1){
+      print "Machine: $M\n";
+      print "your turn:\n";
+      $U=<stdin>;
+      chomp($U);
+      # $U = decode('gbk',$U);
+      # print "$U---->\n";
+      chomp($U);
+      print IsLinked(\%hash,$M,$U);
+      # @array = (1,2,3,4,5);
+      $selectresult = PrintAllLinkable(\%hash,$M);
+      $count = 0;
+      foreach (@$selectresult){
+        print "$count :$_ ";
+        $count ++;
+      }
+      print "\n";
+      $ID=<stdin>;
+      chomp($ID);
+      $End = time();
+      # print "select -> ",$$selectresult[$ID];
+      print "You select:$$selectresult[$ID]\n";
+      # MachineIdiom(\%hash,$$selectresult[$ID]);
+      $M = "$$selectresult[$ID]";
+      print $M,"end \n";
+      # PrintAllLinkable(\%hash,$M);
+      MachineIdiom(\%hash,$M);
+      print "\n";
     }
-    print "\n";
-}
 
-$len = keys %hash;
-my $M = MachineFirst(\%hash);
-print "$len\n";
-print "$M\n";
-
-print "Machine:$M\n";
-print "your turn:\n";
-# $U=<stdin>;
-# $U = decode('gbk',$U);
-print "$U---->\n";
-# chomp($U);
-# print IsLinked(\%hash,$M,$U);
-@array = (1,2,3,4,5);
-$selectresult = PrintAllLinkable(\%hash,$M);
-$count = 0;
-foreach (@$selectresult){
-  print "$count :$_ ";
-  $count ++;
 }
-print "\n";
-$ID=<stdin>;
-chomp($ID);
-$End = time();
-print "select -> ",$$selectresults[$ID];
-print "You select:$$selectresult[$ID]\n";
-#PrintAllLinkable(\%hash,$M);
-print "\n";
+sub readlist{
+    open(fd,'list2');
+    @array = <fd>;
+    foreach my $e (@array){
+        @words = split(' ',$e);
+        print "$words[0] === $words[1]\n";
+        # print "$e \n";
+        # print "\n";
+
+    }
+
+}
+&mainloop;
+# &readlist;
+
+
 # $End = time();
 # print "u->$U\n";
 # IsLinked(\%hash,$M,$U);
