@@ -1,9 +1,9 @@
 #!/bin/perl
-# package NLP;
-# use strict;
-# use warnings;
 use Encode;
-use utf8;
+#use utf8;
+#binmode(STDIN,':encoding(utf8)');
+#binmode(STDOUT,':encoding(utf8)');
+#binmode(STDERR,':encoding(utf8)');
 our @ISA = qw ( Exporter);
 # these CAN be exported.
 our @EXPORT_OK=qw(printhash CreateHash);
@@ -110,7 +110,7 @@ sub IsLinked{# (\%I2I,$M,$U)
 		}
 		my $mlast = ${$wordindex->{"$M"}}[1];
 		my $ufirst = ${$wordindex->{"$U"}}[0];
-		print "$mlast-> $ufirst\n";
+		#print "$mlast-> $ufirst\n";
 		if( "$mlast" != "$ufirst"){
 				return 0;
 		}else {

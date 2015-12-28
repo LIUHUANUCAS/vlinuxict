@@ -1,8 +1,10 @@
 #!/bin/perl
 use Encode;
-
+binmode(STDIN,':encoding(utf8)');
+print "傻逼 perl 语言\n";
+print "hell ow world\n";
 print "begin game...\n";
-
+sub pro{
 @array = (1,2,3,5);
 
 # $hash{"1"} = \@array;
@@ -22,6 +24,10 @@ while($line = <fd>){
 
 }
 print $word,"\n";
+}
+$u = "傻逼";
+#$u = decode('utf8',$u);
+print  encode("gbk",decode('utf8',$u)); 
 # print "@$hash{"1"}";
 #$pa = $hash{"1"};
 #print $$pa[0];

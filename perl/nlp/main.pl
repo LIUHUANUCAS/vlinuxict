@@ -1,13 +1,31 @@
 #!/bin/perl
+
 use Encode;
+use Encode qw(encode);
 use utf8;
-binmode(STDIN,':encoding(utf8)');
-binmode(STDOUT,':encoding(utf8)');
-binmode(STDERR,':encoding(utf8)');
+#binmode(STDIN,':encoding(gbk)');
+#binmode(STDOUT,':encoding(gbk)');
+#binmode(STDERR,':encoding(utf8)');
 require "NLP.pl";
-
+sub encodeGBK{
+	return encode("gbk",$_[0]);
+}
+sub tips{
+	my $hash = $_[0];
+	my $M = $_[1];
+	$selectresult = PrintAllLinkable(\%$hash,$M);
+	$length = $#$selectresult;
+	print "tips \n";
+	$count = 0;
+	foreach my $e(@$selectresult){
+	print "$count:",encodeGBK($e);
+	  #print "$count:",Encode::encode('utf8',$e);
+	  $count ++;
+	}
+	print "\n";
+}
 sub mainloop{
-
+	  #print "汉语我这吗我这里\n";
       my $filename = "list2";
       my %hash = ();
       &CreateHash($filename,\%hash);
@@ -17,12 +35,20 @@ sub mainloop{
       my $M = MachineFirst(\%hash);
       my $Score = 0;
       while(1){
-          print "Machine: $M\n";
-          print "your turn:";
+		  #$M = encode("utf8",decode('utf8',$M)); 
+		  #$M = encode("gbk",$M);
+		  #$M = encodeGBK($M);
+		  print "Machine: ",encodeGBK($M),"\n";
+		  #&tips(\%hash,$M);
+		  print "your turn:";
           print "\n";
           $U=<stdin>;
           chomp($U);
-          if( IsLinked(\%hash,$M,$U)){
+		  #$U = encode('utf8',$U);
+		  
+		  #print encode('gbk',$U);
+          $U = decode('gbk',$U);
+		  if( IsLinked(\%hash,$M,$U)){
           	print "OK!\n";
             $M = $U;
             $Score++;
@@ -30,14 +56,15 @@ sub mainloop{
             $selectresult = PrintAllLinkable(\%hash,$M);
             $length = $#$selectresult;
             if($length <=0){
-              print "机器在词典中没有找到可以接龙的成语....\n";
-              print "得分:$Score\n";
+              print encodeGBK("机器在词典中没有找到可以接龙的成语....\n");
+              print encodeGBK("得分:$Score\n");
               last;
             }
             print "Select One to Cout.\n";
             $count = 0;
             foreach my $e(@$selectresult){
-              print "$count:$e";
+			print "$count:",encodeGBK($e);
+              #print "$count:",Encode::encode('utf8',$e);
               $count ++;
             }
             print "\n";
@@ -45,19 +72,20 @@ sub mainloop{
             $ID=<stdin>;
             chomp($ID);
             $End = time();
-            print "You select:$$selectresult[$ID]\n";
+            print "You select:",encodeGBK($$selectresult[$ID]),"\n";
             $M = "$$selectresult[$ID]";
             $Score--;
-            $End = time();
+            
         }
+			$End = time();
         	if(($End - $Start )/60 > 2){
-        		print "得分:$Score\n";
+        		print encodeGBK("得分:$Score\n");
         		last;
         	}
         $M = MachineIdiom(\%hash,$M);
         if(!$M){
-          print "机器在词典中没有找到可以接龙的成语...!!\n";
-          print "得分:$Score\n";
+          print encodeGBK("机器在词典中没有找到可以接龙的成语...!!\n");
+          print encodeGBK("得分:$Score\n");
           last;
         }
     }
