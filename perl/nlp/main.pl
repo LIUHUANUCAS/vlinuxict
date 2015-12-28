@@ -1,9 +1,9 @@
 #!/bin/perl
-# package main;
-# use strict;
-# use warnings;
 use Encode;
-use Foo;  # import default list of items.
+use utf8;
+binmode(STDIN,':encoding(utf8)');
+binmode(STDOUT,':encoding(utf8)');
+binmode(STDERR,':encoding(utf8)');
 require "NLP.pl";
 
 sub mainloop{
@@ -36,8 +36,8 @@ sub mainloop{
             }
             print "Select One to Cout.\n";
             $count = 0;
-            foreach (@$selectresult){
-              print "$count:$_ ";
+            foreach my $e(@$selectresult){
+              print "$count:$e";
               $count ++;
             }
             print "\n";
